@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/login.css"/>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <title>Login</title>
+
+     <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        fetch('header.html')
+            .then(resp => resp.text())
+            .then(html => document.getElementById('header').innerHTML = html);
+        
+        fetch('footer.html')
+            .then(resp => resp.text())
+            .then(html => document.getElementById('footer').innerHTML = html);
+    </script>
+  </head>
+
+  <body>
+    <!-- Vai carregar o header  -->
+    <header id="header"></header>
+
+    <div class="container" id="container">
+      <!-- CRIAR NOVA CONTA -->
+      <div class="form-container criar-cont">
+        <form>
+          <h1>Criar Conta</h1>
+          <span>ou use seu email para se registrar</span>
+
+          <input type="text" name="nome" placeholder="Nome" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <input type="password" name="senha" placeholder="Senha" required />
+
+          <button type="submit"><a href="principal.html">Registrar</a></button>
+        </form>
+      </div>
+
+      <!-- ENTRAR NA CONTA -->
+      <div class="form-container entrar">
+        <form>
+          <h1>Entrar</h1>
+          <input type="email" name="email" placeholder="Email" required />
+          <input type="password" name="senha" placeholder="Senha" required />
+          <a href="#" id="esquecer-senha">Esqueceu sua senha?</a>
+          <button type="submit"><a href="principal.html">Entrar</a></button>
+        </form>
+      </div>
+
+      <!-- ALTERNADOR ENTRE "CRIAR CONTA" E "ENTRAR" -->
+      <div class="alternar-container">
+        <div class="alternar">
+          <div class="alternar-panel alternar-esquerda">
+            <h1>Entrar</h1>
+            <p>Já possui uma conta? Click no botão abaixo.</p>
+            <button class="hidden" id="login">Login</button>
+          </div>
+
+          <div class="alternar-panel alternar-direita">
+            <h1>Criar Conta</h1>
+            <p>Ainda não possui uma conta? Click no botão abaixo para criar.</p>
+            <button class="hidden" id="register">Criar conta</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Vai carregar o footer  -->
+    <footer id="footer"></footer>
+    
+    <script src="js/script.js"></script>
+  </body>
+</html>

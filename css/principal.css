@@ -1,0 +1,74 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+  margin: 0;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.card {
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.507);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 600px;
+}
+
+/* tabela dos eventos importantes */
+.eventos-importantes {
+ background-color: #eaf2ff; /* azul bem clarinho */
+  border-left: 5px solid #0a58ca; /* azul escuro */
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 600px;
+}
+
+.eventos-importantes h2 {
+  color: #007bff;
+  margin-top: 0;
+}
+
+.evento {
+  margin-bottom: 15px;
+  border-left: 2px solid #555;
+  padding-left: 8px;
+  text-align: left;
+  color: black;
+}
+
+.evento strong {
+  display: block;
+  font-size: 1.1em;
+}
+
+.evento span {
+  color: #555;
+}
+
+/* Botões */
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-excluir {
+  background-color: #f64242;
+  color: white;
+}
+.btn-excluir:hover {
+  background-color: #b30000;
+}
