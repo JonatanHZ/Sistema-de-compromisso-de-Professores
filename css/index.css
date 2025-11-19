@@ -18,7 +18,7 @@ main {
 }
 
 .cont-bem-vindo {
-    width: 60%;
+    width: 100%;
     margin: auto;
     text-align: center;
     overflow: hidden;
@@ -53,7 +53,7 @@ main {
     color: whitesmoke;
     text-decoration: none;
     margin-top: 10px;
-    transition: 0.2s;
+    transition: 0.2s ease-in-out;
 }
 
 .button:hover {

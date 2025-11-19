@@ -1,74 +1,105 @@
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-main {
-  margin: 0;
-  height: 100vh;
-  background-color: #f4f4f4;
+.card-principal {
+    background: #fffefe;
+    width: 70%;
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.795);
+    text-align: center;
 }
 
-.card {
-  color: black;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.507);
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  width: 600px;
+.card-principal h1 {
+    font-size: 32px;
+    font-weight: 700;
 }
 
-/* tabela dos eventos importantes */
-.eventos-importantes {
- background-color: #eaf2ff; /* azul bem clarinho */
-  border-left: 5px solid #0a58ca; /* azul escuro */
-  padding: 20px;
-  margin: 20px auto;
-  width: 90%;
-  max-width: 600px;
+.card-principal h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 5px;
+    color: #444;
 }
 
-.eventos-importantes h2 {
-  color: #007bff;
-  margin-top: 0;
+.card-principal p {
+    margin-top: 10px;
+    color: #555;
 }
 
-.evento {
-  margin-bottom: 15px;
-  border-left: 2px solid #555;
-  padding-left: 8px;
-  text-align: left;
-  color: black;
+.eventos-card {
+    margin-top: 30px;
+    background: #eaf4ff;
+    padding: 25px;
+    border-radius: 14px;
+    border-left: 6px solid #1a73e8;
 }
 
-.evento strong {
-  display: block;
-  font-size: 1.1em;
+.eventos-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1a73e8;
 }
 
-.evento span {
-  color: #555;
+.eventos-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-/* Botões */
-button {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  margin: 4px;
-  transition: background-color 0.3s ease;
+.eventos-card li {
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #dbe8f8;
+    text-align: left;
 }
 
-.btn-excluir {
-  background-color: #f64242;
-  color: white;
+.eventos-card li strong {
+    font-size: 17px;
 }
-.btn-excluir:hover {
-  background-color: #b30000;
+
+.eventos-card li span {
+    display: block;
+    color: #555;
+    margin-top: 4px;
+}
+
+.btns {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-edit {
+    background: #1a73e8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-edit:hover {
+    background: #1259b8;
+}
+
+.btn-delete {
+    background: #e84949;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-delete:hover {
+    background: #c73636;
 }

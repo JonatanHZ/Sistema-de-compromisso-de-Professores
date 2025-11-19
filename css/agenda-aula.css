@@ -1,0 +1,108 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.agenda-container {
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.agenda-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: 700px;
+  color: #1a73e8;
+}
+
+/* TABELA  */
+.agenda-tabela {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.agenda-tabela thead tr {
+  background-color: #1a73e8;
+  color: #fff;
+}
+
+.agenda-tabela th,
+.agenda-tabela td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+
+.agenda-tabela tbody tr:hover {
+  background: #f3f7ff;
+  transition: 0.2s;
+}
+
+/* Botões de Ação  */
+.btn-editar,
+.btn-excluir {
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  color: #fff;
+}
+
+.btn-editar {
+  background-color: #2b7bff;
+}
+
+.btn-editar:hover {
+  background: #1a5fd1;
+}
+
+.btn-excluir {
+  background-color: rgb(248, 44, 44);
+}
+
+.btn-excluir:hover {
+  background: rgb(193, 0, 0);
+}
+
+.btn-adicionar {
+  margin-top: 20px;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  border-style: none;
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-adicionar:hover {
+  background-color: #1e7e34;
+}
+
+/* Responsividade  */
+@media (max-width: 600px) {
+  .agenda-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .agenda-container h2 {
+    font-size: 22px;
+  }
+
+  .agenda-tabela th,
+  .agenda-tabela td {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .btn-editar,
+  .btn-excluir {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
