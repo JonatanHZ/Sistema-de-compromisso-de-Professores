@@ -55,3 +55,150 @@ header {
 .nav-links a:hover {
   color: rgb(176, 176, 176);
 }
+
+/* SUBMENU DESKTOP */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #222;
+  padding: 10px 0;
+  border-radius: 8px;
+  display: none;
+  min-width: 150px;
+}
+
+.dropdown-menu li a {
+  padding: 10px 15px;
+  display: block;
+  color: white;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* SUBMENU MOBILE */
+.mobile-dropdown {
+  width: 100%;
+}
+
+.mobile-title {
+  display: block;
+  padding: 10px 0;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.mobile-dropdown input {
+  display: none;
+}
+
+.mobile-submenu {
+  display: none;
+  padding-left: 15px;
+}
+
+.mobile-dropdown input:checked + .mobile-submenu {
+  display: block;
+}
+
+.mobile-submenu li a {
+  display: block;
+  padding: 5px 0;
+}
+
+/* Responsividade  */
+#menu-toggle {
+    display: none;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 27px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 0;
+    z-index: 200;
+}
+
+
+.menu-mobile {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    height: 100vh;
+    width: 150px;
+    background: #0d1117;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+    transition: .3s;
+    padding-top: 50px;
+    z-index: 150;
+}
+
+.menu-mobile ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-mobile ul li {
+    padding: 20px;
+    border-bottom: 1px solid #222;
+}
+
+.menu-mobile a {
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.menu-mobile a:hover {
+    color: rgb(176, 176, 176);
+}
+
+
+.overlay-mobile {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 100;
+}
+
+
+#menu-toggle:checked ~ .menu-mobile {
+    right: 0;
+}
+
+#menu-toggle:checked ~ .overlay-mobile {
+    display: block;
+}
+
+@media (max-width: 600px) {
+    header {
+        box-shadow: none;
+    }
+    .menu-desktop {
+        display: none;
+    }
+    .menu-btn {
+        display: block;
+        position: fixed;
+        padding: 10px;
+    }
+    .menu-mobile ul li {
+        padding: 18px;
+        gap: 22px;       
+    }
+
+    .nav-links{
+      display: none;
+    }
+}

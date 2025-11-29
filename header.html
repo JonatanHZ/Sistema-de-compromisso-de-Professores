@@ -2,10 +2,52 @@
 <header>
   <nav class="nav-bar">
     <a href="#" class="logo">ProfPlanner</a>
+
     <ul class="nav-links">
       <li><a href="index.html">Inicio</a></li>
+
+      <!-- SUBMENU DESKTOP -->
+      <li class="dropdown">
+        <a href="#">Cadastro</a>
+        <ul class="dropdown-menu">
+          <li><a href="agenda-aula.html">Aulas</a></li>
+          <li><a href="#">Boletim (Alunos)</a></li>
+          <li><a href="principal.html">Compromissos</a></li>
+          <!-- Coloque mais se quiser -->
+        </ul>
+      </li>
+
       <li><a href="#">Sobre</a></li>
       <li><a href="#">Serviços</a></li>
     </ul>
   </nav>
+
+  <!-- MENU MOBILE -->
+  <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" class="menu-btn">
+    <i class="fa-solid fa-bars"></i>
+  </label>
+
+  <nav class="menu-mobile">
+    <ul>
+      <li><a href="#inicio">Início</a></li>
+
+      <!-- SUBMENU MOBILE -->
+      <li class="mobile-dropdown">
+        <label for="drop-cad" class="mobile-title">Cadastro ▼</label>
+        <input type="checkbox" id="drop-cad" />
+
+        <ul class="mobile-submenu">
+          <li><a href="agenda-aula.html">Aulas</a></li>
+          <li><a href="#">Alunos</a></li>
+          <li><a href="#">Materias</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  </nav>
+
+  <label for="menu-toggle" class="overlay-mobile"></label>
 </header>

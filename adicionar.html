@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProfPlanner</title>
+    <link rel="stylesheet" href="css/Adicionar.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      fetch("header.html")
+        .then((resp) => resp.text())
+        .then((html) => (document.getElementById("header").innerHTML = html));
+
+      fetch("footer.html")
+        .then((resp) => resp.text())
+        .then((html) => (document.getElementById("footer").innerHTML = html));
+    </script>
+  </head>
+  <body>
+    <!-- Vai carregar o header -->
+    <header id="header"></header>
+
+    <div class="container">
+    <h2>Novo Compromisso</h2>
+
+    <!-- TIPO -->
+    <label for="tipo">Tipo:</label>
+    <select id="tipo">
+      <option disabled selected>--- Selecione ---</option>
+      <option value="reuniao">Reunião</option>
+      <option value="aula">Aula</option>
+      <option value="compromisso">Compromisso</option>
+    </select>
+
+    <!-- DATA -->
+    <label for="data">Data:</label>
+    <input type="date" id="data">
+
+    <!-- HORÁRIO -->
+    <label for="hora">Horário:</label>
+    <input type="time" id="hora">
+
+    <!-- DESCRIÇÃO -->
+    <label for="desc">Descrição:</label>
+    <textarea id="desc" placeholder="Descreva o compromisso..."></textarea>
+
+    <!-- BOTÃO -->
+    <button onclick="enviar()">Salvar</button>
+  </div>
+
+
+    <!-- Vai carregar o footer  -->
+    <footer id="footer"></footer>
+
+    <script src="js/compromisso.js"></script>
+  </body>
+</html>

@@ -1,13 +1,13 @@
 body {
   margin: 0;
   padding: 0;
-  min-height: 100vh; /* ocupa a tela toda */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 main {
-  flex: 1; /* empurra o footer pra baixo */
+  flex: 1; 
 }
 
 footer {
@@ -19,3 +19,4 @@ footer {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 } 
+
