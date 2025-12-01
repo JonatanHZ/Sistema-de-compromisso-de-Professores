@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/login.css"/>
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="shortcut icon" href="img/ProfPlanner.ico" type="image/x-icon">
     <title>Login</title>
 
      <!-- BOOTSTRAP -->
@@ -25,7 +26,7 @@
   <body>
     <!-- Vai carregar o header  -->
     <header id="header"></header>
-
+     
     <div class="container" id="container">
       <!-- CRIAR NOVA CONTA -->
       <div class="form-container criar-cont">
@@ -37,7 +38,7 @@
           <input type="email" name="email" placeholder="Email" required />
           <input type="password" name="senha" placeholder="Senha" required />
 
-          <button type="submit"><a href="principal.html">Registrar</a></button>
+          <button type="button" onclick="registrar()">Registrar</button>
         </form>
       </div>
 
@@ -48,7 +49,7 @@
           <input type="email" name="email" placeholder="Email" required />
           <input type="password" name="senha" placeholder="Senha" required />
           <a href="#" id="esquecer-senha">Esqueceu sua senha?</a>
-          <button type="submit"><a href="principal.html">Entrar</a></button>
+          <button type="button" onclick="entrar()">Entrar</button>
         </form>
       </div>
 
@@ -69,7 +70,6 @@
         </div>
       </div>
     </div>
-    
     <!-- Vai carregar o footer  -->
     <footer id="footer"></footer>
     

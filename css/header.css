@@ -7,17 +7,14 @@
 
 
 header {
-  background-color: #0d6efd; 
+  background-color: #0d6efd;
   width: 100%;
   color: white;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   top: 0;
   left: 0;
-  width: 100%;
-  background-color: #0d6efd;
-  color: white;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
 
 /* Aba de navegação */
 .nav-bar {
@@ -123,11 +120,10 @@ header {
     color: white;
     cursor: pointer;
     position: absolute;
-    right: 15px;
-    top: 0;
-    z-index: 200;
+    right: 20px;
+    top: 12px;   
+    z-index: 9999;
 }
-
 
 .menu-mobile {
     position: fixed;
@@ -190,15 +186,17 @@ header {
     }
     .menu-btn {
         display: block;
-        position: fixed;
-        padding: 10px;
+        position: absolute;  /* mantém dentro do header */
+        top: 12px;
+        right: 20px;
     }
+    
     .menu-mobile ul li {
         padding: 18px;
         gap: 22px;       
     }
 
-    .nav-links{
+    .nav-links {
       display: none;
     }
 }
