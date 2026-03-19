@@ -1,112 +1,382 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --navy: #0f1e3c;
+    --navy-mid: #1a3260;
+    --primary: #1a73e8;
+    --primary-lt: #e8f0fe;
+    --primary-glow: #4a9af5;
+    --green: #22c55e;
+    --green-lt: #dcfce7;
+    --yellow: #f59e0b;
+    --yellow-lt: #fef3c7;
+    --red: #ef4444;
+    --red-lt: #fee2e2;
+    --bg: #f0f4fa;
+    --card: #ffffff;
+    --border: #dde4f0;
+    --text: #0f1e3c;
+    --text-muted: #64748b;
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --shadow-card: 0 4px 24px -4px rgba(26, 115, 232, .12), 0 1px 4px rgba(0, 0, 0, .06);
+    --shadow-elev: 0 8px 40px -8px rgba(26, 115, 232, .22), 0 2px 8px rgba(0, 0, 0, .08);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   font-family: 'Inter', 'Segoe UI', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--navy);
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    backdrop-filter: blur(12px);
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-glow) 100%);
+    color: #fff;
+    font-size: 17px;
+}
+
+.logo-text {
+    font-family: 'Sora', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--card);
+}
+
+.logo-accent {
+    opacity: .7;
+}
+
+.nav {
+    display: flex;
+    gap: 4px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, .65);
+    text-decoration: none;
+    transition: background .2s, color .2s;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, .1);
+    color: #fff;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-icon {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, .65);
+    font-size: 17px;
+    cursor: pointer;
+    transition: background .2s, color .2s;
+}
+
+.btn-icon:hover {
+    background: rgba(255, 255, 255, .1);
+    color: #fff;
+}
+
+.notif-dot {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--red);
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container */
+main {
+  flex: 1;
 }
 
 .agenda-container {
   width: 90%;
-  max-width: 900px;
-  margin: 40px auto;
+  max-width: 860px;
+  margin: 100px auto;
   background-color: #fff;
-  padding: 25px;
-  border-radius: 14px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.552);
+  padding: 50px;
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
 }
 
-.agenda-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 26px;
-  font-weight: 700px;
-  color: #1a73e8;
+/* Header da página */
+.agenda-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
 }
 
-/* TABELA  */
+.agenda-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #111;
+  letter-spacing: -0.3px;
+}
+
+/* Tabela */
 .agenda-tabela {
   width: 100%;
   border-collapse: collapse;
 }
 
-.agenda-tabela thead tr {
-  background-color: #1a73e8;
-  color: #fff;
-}
-
-.agenda-tabela th,
-.agenda-tabela td {
-  padding: 12px 16px;
+.agenda-tabela thead th {
   text-align: left;
-  border-bottom: 2px solid #ddd;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #888;
+  padding: 10px 14px;
+  border-bottom: 1px solid #e5e5e5;
 }
 
-.agenda-tabela tbody tr:hover {
-  background: #f3f7ff;
-  transition: 0.2s;
+.agenda-tabela tbody td {
+  padding: 13px 14px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #333;
 }
 
-/* Botões de Ação  */
+.agenda-tabela tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.agenda-tabela tbody tr:hover td {
+  background-color: #fafafa;
+}
+
+/* Badges de tipo */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.badge-aula {
+  background-color: #e8f0fe;
+  color: #1a56db;
+}
+
+.badge-reuniao {
+  background-color: #fef3e2;
+  color: #c47f00;
+}
+
+/* Coluna de ações */
+.acoes {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Botões de ação */
 .btn-editar,
 .btn-excluir {
-  border: none;
-  padding: 6px 10px;
+  border: 1px solid transparent;
+  padding: 5px 12px;
   cursor: pointer;
   border-radius: 6px;
-  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 
 .btn-editar {
-  background-color: #2b7bff;
+  background-color: transparent;
+  border-color: #d0d0d0;
+  color: #444;
 }
 
 .btn-editar:hover {
-  background: #1a5fd1;
+  background-color: #f0f0f0;
+  border-color: #bbb;
+  color: #111;
 }
 
 .btn-excluir {
-  background-color: rgb(248, 44, 44);
+  background-color: transparent;
+  border-color: #ffd0d0;
+  color: #c0392b;
 }
 
 .btn-excluir:hover {
-  background: rgb(193, 0, 0);
+  background-color: #fff0f0;
+  border-color: #f5a5a5;
+  color: #a93226;
 }
 
+/* Botão Adicionar */
 .btn-adicionar {
-  margin-top: 20px;
-  padding: 10px 16px;
-  cursor: pointer;
-  border-radius: 6px;
-  border-style: none;
-  background-color: #28a745;
-}
-
-.btn-adicionar a {
+  display: inline-block;
   text-decoration: none;
+  padding: 8px 16px;
+  background-color: #111;
   color: #fff;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  transition: background 0.15s;
 }
 
 .btn-adicionar:hover {
-  background-color: #1e7e34;
+  background-color: #333;
 }
 
-/* Responsividade  */
+/* Footer */
+.events-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 22px;
+    background: #f8fafd;
+    border-top: 1px solid var(--border);
+}
+
+.footer-info {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.footer-btns {
+    display: flex;
+    gap: 8px;
+}
+
+.footer {
+    background: var(--card);
+    border-top: 1px solid var(--border);
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.footer-brand {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.footer-copy {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* Responsividade */
 @media (max-width: 600px) {
   .agenda-container {
     width: 95%;
-    padding: 15px;
+    padding: 20px;
+    margin: 24px auto;
   }
 
-  .agenda-container h2 {
-    font-size: 22px;
+  .agenda-header h2 {
+    font-size: 18px;
   }
 
-  .agenda-tabela th,
-  .agenda-tabela td {
-    padding: 10px;
-    font-size: 14px;
+  .agenda-tabela thead th,
+  .agenda-tabela tbody td {
+    padding: 10px 8px;
+    font-size: 13px;
   }
 
   .btn-editar,
   .btn-excluir {
-    padding: 8px 10px;
+    padding: 5px 8px;
     font-size: 12px;
+  }
+
+  .acoes {
+    gap: 5px;
   }
 }
