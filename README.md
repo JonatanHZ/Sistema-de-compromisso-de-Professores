@@ -1,2 +1,2 @@
-Esse projeto foi feito para ajudar os professores a organizarem o seus compromissos (obviamente).
+Esse projeto foi feito para ajudar os professores a organizarem o seus compromissos.
 Ainda falta algumas coisas para melhorar...
