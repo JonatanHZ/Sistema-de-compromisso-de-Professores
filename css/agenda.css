@@ -1,12 +1,12 @@
-  *,
-  *::before,
-  *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
+}
 
-  :root {
+:root {
     --navy: #0f1e3c;
     --navy-mid: #1a3260;
     --primary: #1a73e8;
@@ -28,33 +28,33 @@
     --radius-lg: 20px;
     --shadow-card: 0 4px 24px -4px rgba(26, 115, 232, .12), 0 1px 4px rgba(0, 0, 0, .06);
     --shadow-elev: 0 8px 40px -8px rgba(26, 115, 232, .22), 0 2px 8px rgba(0, 0, 0, .08);
-  }
+}
 
-  html {
+html {
     scroll-behavior: smooth;
-  }
+}
 
 
-  body {
+body {
     font-family: 'Inter', 'Segoe UI', sans-serif;
     background-color: var(--bg);
     color: var(--text);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-  }
+}
 
-  /* Header */
-  header {
+/* Header */
+header {
     position: sticky;
     top: 0;
     z-index: 100;
     background-color: var(--navy);
     border-bottom: 1px solid rgba(255, 255, 255, .08);
     backdrop-filter: blur(12px);
-  }
+}
 
-  .header-inner {
+.header-inner {
     max-width: 1200px;
     margin: 0 auto;
     padding: 12px 24px;
@@ -62,15 +62,15 @@
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-  }
+}
 
-  .logo {
+.logo {
     display: flex;
     align-items: center;
     gap: 10px;
-  }
+}
 
-  .logo-icon {
+.logo-icon {
     width: 36px;
     height: 36px;
     display: flex;
@@ -80,33 +80,33 @@
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-glow) 100%);
     color: #fff;
     font-size: 17px;
-  }
+}
 
-  .logo-text {
+.logo-text {
     font-family: 'Sora', sans-serif;
     font-size: 19px;
     font-weight: 700;
     color: var(--card);
-  }
+}
 
-  .logo-accent {
+.logo-accent {
     opacity: .7;
-  }
+}
 
-  .nav {
+.nav {
     display: flex;
     gap: 4px;
-  }
+}
 
-  .nav-link-active {
+.nav-link-active {
     background: rgba(255, 255, 255, .1);
     color: #fff;
     text-decoration: none;
     padding: 8px 16px;
     border-radius: var(--radius-sm);
-  }
-  
-  .nav-link {
+}
+
+.nav-link {
     padding: 8px 16px;
     border-radius: var(--radius-sm);
     font-size: 14px;
@@ -114,20 +114,20 @@
     color: rgba(255, 255, 255, .65);
     text-decoration: none;
     transition: background .2s, color .2s;
-  }
+}
 
-  .nav-link:hover {
+.nav-link:hover {
     background: rgba(255, 255, 255, .1);
     color: #fff;
-  }
+}
 
-  .header-actions {
+.header-actions {
     display: flex;
     align-items: center;
     gap: 8px;
-  }
+}
 
-  .btn-icon {
+.btn-icon {
     position: relative;
     width: 36px;
     height: 36px;
@@ -141,14 +141,14 @@
     font-size: 17px;
     cursor: pointer;
     transition: background .2s, color .2s;
-  }
+}
 
-  .btn-icon:hover {
+.btn-icon:hover {
     background: rgba(255, 255, 255, .1);
     color: #fff;
-  }
+}
 
-  .notif-dot {
+.notif-dot {
     position: absolute;
     top: 6px;
     right: 6px;
@@ -156,9 +156,9 @@
     height: 8px;
     border-radius: 50%;
     background: var(--red);
-  }
+}
 
-  .avatar {
+.avatar {
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -169,61 +169,28 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 
-/* Container  */
-  .container {
-    max-width: 450px;
-    margin: auto;
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
-  }
 
-  h2 {
+/* CONTEUDO PRINCIPAL  */
+.container h2 {
     text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-  }
+    font-size: 1.8rem;
+    margin: 40px;
+}
 
-  label {
-    font-weight: bold;
-    margin-top: 10px;
-    display: block;
-  }
-
-  select,
-  input,
-  textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
+.container table {
+    margin: auto;
+    width: 600px;
+    padding: 20px;
     border-radius: 6px;
-    border: 1px solid #aaa;
-    font-size: 16px;
-  }
+}
 
-  textarea {
-    resize: none;
-    height: 80px;
-  }
 
-  button {
-    margin-top: 20px;
-    width: 100%;
-    padding: 12px;
-    border: none;
-    background: #0077ff;
-    color: white;
-    font-size: 18px;
-    border-radius: 8px;
-    cursor: pointer;
-  }
 
-  button:hover {
-    background: #005fcc;
-  }
+
+
+
 
 /* Footer */
 .events-card-footer {

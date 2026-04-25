@@ -134,6 +134,22 @@ header {
     color: #fff;
 }
 
+.nav-link-sair {
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    background: red;
+     transition: background .2s, color .2s; 
+}
+
+.nav-link-sair:hover {
+    background: #981b1b;
+    color: #fff;
+}
+
 .header-actions {
     display: flex;
     align-items: center;
@@ -625,6 +641,11 @@ header {
     justify-content: center;
     color: #fff;
     font-size: 18px;
+}
+
+.events-section a {
+    text-decoration: none;
+    color: #fff;
 }
 
 .events-card-title {

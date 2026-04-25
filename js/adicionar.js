@@ -1,14 +1,12 @@
-function enviar() {
-      const tipo = document.getElementById("tipo").value;
-      const data = document.getElementById("data").value;
-      const hora = document.getElementById("hora").value;
-      const desc = document.getElementById("desc").value;
+function validarForm() {
+  const professor_id = document.getElementById('professor_id').value;
+  const agenda_tipo_id = document.getElementById('agenda_tipo_id').value;
+  const data = document.getElementById('data').value;
 
-      if (!tipo || !data || !hora || !desc) {
-        alert("Preencha todos os campos!");
-        return;
-      } else { 
-        alert("Compromisso salvo com sucesso!");
-        }
-        window.location.href = "agenda-aula.html"; 
-    }
+  if (!professor_id || !agenda_tipo_id || !data) {
+    alert('Por favor, preencha todos os campos obrigatórios.');
+    return false;
+  }
+
+  return true;
+}

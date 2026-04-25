@@ -1,0 +1,236 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: login.php");
+    exit();
+}
+$nome_professor = $_SESSION['nome'];
+
+// Pega a primeira letra do nome para o avatar
+$inicial = strtoupper(mb_substr($nome_professor, 0, 1));
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/ProfPlanner.ico" type="image/x-icon">
+    <title>ProfPlanner</title>
+    <link rel="stylesheet" href="css/principal.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+            <div class="logo">
+                <div class="logo-icon"><i class="bi bi-book-half"></i></div>
+                <span class="logo-text">Prof<span class="logo-accent">Planner</span></span>
+            </div>
+
+            <nav class="nav">
+                <a href="#" class="nav-link active">Início</a>
+                <a href="agenda-aula.php" class="nav-link">Aulas</a>
+                <a href="#" class="nav-link">Turmas</a>
+                <a href="sair.php" class="nav-link-sair">Sair</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-icon notif-btn">
+                    <i class="bi bi-bell"></i>
+                    <span class="notif-dot"></span>
+                </button>
+
+                <div class="avatar" title="<?= htmlspecialchars($nome_professor) ?>">
+                    <?= $inicial ?>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- APRESENTAÇÃO -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="bi bi-mortarboard"></i>
+                Sistema de Agenda Docente
+            </div>
+
+            <h1 class="hero-title">
+                Bem-vindo(a),
+                <!-- nome do professsor vai aparecer, nem parece q demorei 10 minutos p colocar isso aq  -->
+                <span class="hero-highlight"><?= htmlspecialchars($nome_professor) ?>!</span>
+            </h1>
+            <p class="hero-sub">
+                Gerencie suas aulas, eventos e reuniões de forma simples e organizada.
+            </p>
+
+            <div class="hero-btns">
+                <button class="btn btn-outline-hero">Ver Horários</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATUS -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon icon-blue"><i class="bi bi-calendar3"></i></div>
+                <div>
+                    <p class="stat-value">18</p>
+                    <p class="stat-label">Aulas Esta Semana</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon icon-green"><i class="bi bi-people"></i></div>
+                <div>
+                    <p class="stat-value">5</p>
+                    <p class="stat-label">Turmas Ativas</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon icon-yellow"><i class="bi bi-clock"></i></div>
+                <div>
+                    <p class="stat-value">32h</p>
+                    <p class="stat-label">Horas Planejadas</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon icon-red"><i class="bi bi-graph-up-arrow"></i></div>
+                <div>
+                    <p class="stat-value">3</p>
+                    <p class="stat-label">Compromissos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTEUDO PRINCIPAL -->
+    <main class="main-content">
+        <div class="content-grid">
+            <section class="events-section">
+                <div class="section-header">
+                    <h2 class="section-title">Eventos Importantes</h2>
+                    <button class="btn btn-primary-sm">
+                        <i class="bi bi-plus-lg"></i><a href="agenda-aula.html"> Adicionar</a>
+                    </button>
+                </div>
+                <div class="events-card">
+                    <div class="events-card-header">
+                        <div class="events-card-title-group">
+                            <div class="events-icon"><i class="bi bi-calendar-event"></i></div>
+                            <div>
+                                <h3 class="events-card-title">Eventos Importantes</h3>
+                                <p class="events-card-sub" id="progress-label">2/3 concluídos</p>
+                            </div>
+                        </div>
+                        <div class="progress-group">
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar-fill" id="progress-bar" style="width: 66%"></div>
+                            </div>
+                            <span class="progress-pct" id="progress-pct">66%</span>
+                        </div>
+                    </div>
+
+                    <ul class="event-list" id="event-list">
+                        <li class="event-item" data-id="1">
+                            <input type="checkbox" class="event-select" />
+                            <button class="complete-btn completed" onclick="toggleComplete(this)" title="Marcar como concluído">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </button>
+                            <div class="event-info">
+                                <div class="event-title-row">
+                                    <span class="event-name done">Feira de Ciências</span>
+                                    <span class="tag tag-blue">Evento</span>
+                                </div>
+                                <span class="event-date"><i class="bi bi-clock"></i> 20 de Outubro de 2025 às 9h</span>
+                            </div>
+                            <div class="event-actions">
+                                <button class="row-btn edit-row" title="Editar"><i class="bi bi-pencil"></i></button>
+                                <button class="row-btn delete-row" onclick="deleteEvent(this)" title="Excluir"><i class="bi bi-trash"></i></button>
+                            </div>
+                        </li>
+                        <li class="event-item" data-id="2">
+                            <input type="checkbox" class="event-select" />
+                            <button class="complete-btn completed" onclick="toggleComplete(this)" title="Marcar como concluído">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </button>
+                            <div class="event-info">
+                                <div class="event-title-row">
+                                    <span class="event-name done">Palestra sobre Meio Ambiente</span>
+                                    <span class="tag tag-yellow">Palestra</span>
+                                </div>
+                                <span class="event-date"><i class="bi bi-clock"></i> 22 de Outubro de 2025 às 14h</span>
+                            </div>
+                            <div class="event-actions">
+                                <button class="row-btn edit-row" title="Editar"><i class="bi bi-pencil"></i></button>
+                                <button class="row-btn delete-row" onclick="deleteEvent(this)" title="Excluir"><i class="bi bi-trash"></i></button>
+                            </div>
+                        </li>
+                        <li class="event-item" data-id="3">
+                            <input type="checkbox" class="event-select" />
+                            <button class="complete-btn" onclick="toggleComplete(this)" title="Marcar como concluído">
+                                <i class="bi bi-circle"></i>
+                            </button>
+                            <div class="event-info">
+                                <div class="event-title-row">
+                                    <span class="event-name">Reunião de Pais</span>
+                                    <span class="tag tag-green">Reunião</span>
+                                </div>
+                                <span class="event-date"><i class="bi bi-clock"></i> 25 de Dezembro de 2025 às 18h</span>
+                            </div>
+                            <div class="event-actions">
+                                <button class="row-btn edit-row" title="Editar"><i class="bi bi-pencil"></i></button>
+                                <button class="row-btn delete-row" onclick="deleteEvent(this)" title="Excluir"><i class="bi bi-trash"></i></button>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="events-card-footer">
+                        <span class="footer-info" id="selected-info">Selecione para editar</span>
+                        <div class="footer-btns">
+                            <button class="btn btn-outline-sm" id="btn-edit-selected" disabled>
+                                <i class="bi bi-pencil"></i> Editar
+                            </button>
+                            <button class="btn btn-danger-sm" id="btn-delete-selected" disabled onclick="deleteSelected()">
+                                <i class="bi bi-trash"></i> Excluir
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="sidebar">
+                <div class="sidebar-card">
+                    <h3 class="sidebar-card-title">Próxima Aula</h3>
+                    <p class="sidebar-card-sub">Hoje, 14h00</p>
+                    <div class="next-class-box">
+                        <i class="bi bi-calendar3 next-class-icon"></i>
+                        <div>
+                            <p class="next-class-name">Matemática – 9º Ano A</p>
+                            <p class="next-class-info">Sala 12 · 50 min</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <span class="footer-brand">ProfPlanner</span>
+            <span class="footer-copy">© 2025 · Todos os direitos reservados</span>
+        </div>
+    </footer>
+
+    <script src="js/principal.js"></script>
+</body>
+</html>
